@@ -7,11 +7,22 @@ def favourite_tv_show(person)
 end
 #--------------------------------
 
-def likes_to_eat(person, snacks)
-   
-  if person[:favourites][:snacks][0] == snacks
-    return true
-  else
-    return false
+def likes_to_eat(person, snack_to_check)
+  for snack in person[:favourites][:snacks] 
+    if snack == snack_to_check
+      return true
+    end
   end
+  return false
+end
+  
+
+def add_friend(person, new_friend)
+  person[:friends].push(new_friend)
+
+end
+
+def remove_friend(person, old_friend)
+  person[:friends].delete(old_friend)
+
 end
